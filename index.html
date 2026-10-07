@@ -3,48 +3,52 @@
   <head>
     <title>Untitled</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js">
+    </script>
   </head>
   
   <body>
    <script>
-    let fullmoonX = 300;
-     let fullmoonY = 300;
-     let fullmoonSize = 80;
-     
-     function setup(){
-       createCanvas(900,700)
-       background('black');
+    let fullmoonX = 650;
+     let fullmoonY = 150;
+     let fullmoonSize = 100;
+     let canvasWidth = 900;
+     let canvasHeight = 700;
+
+function setup(){
+       createCanvas(canvasWidth,canvasHeight)
      }
      
      function draw(){
-       //moon
+       background('black');
+       
+       moon();
+       rocket();
+       flames();
+       pointer();
+     }
+     function moon(){
        fill('white');
-     ellipse(650,100,80,80);
-     
-       function draw(){
-       //rocket
-       fill('grey');
+     ellipse(650,150,100,100);
+     }
+       function rocket(){
+       fill('teal');
        rotate(QUARTER_PI);
-     rect(200,250,50,100);
+     rect(425,250,50,100);
        }
        
-       function draw(){
-       //flames
+       function flames(){
        fill('orange');
        stroke('orange')
-       line(0,450,800,450);
+       line(450,350,450,460);
+         line(450,350,470,490);
+         line(450,350,430,440);
        }
      
-       function draw(){
-       //pointer
+       function pointer(){
        fill('red')
-       triangle(300,450,200,300,400,300)
-       }
+       triangle(450,200,400,250,500,250)
      }
-    
-    
-    
     
     </script>
   </body>
